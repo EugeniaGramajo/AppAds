@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet , Text,Pressable} from 'react-native';
-import { user } from '../../../Data/Data';
+import { View, TextInput, Text,Pressable} from 'react-native';
+import auth from '@react-native-firebase/auth';
 
 const LoginForm = () => {
   const [email, setEmail, ] = useState('');
   const [password, setPassword] = useState('');
 
+  const signInUser = (email, password) => {
+    auth().signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      var user = userCredential.user;
+      console.log('Usuario inició sesión exitosamente: ', user);
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log('Error al iniciar sesión: ', errorMessage);
+    });
+  }
+
   const handleLogin = () => {
-    // Lógica de inicio de sesión aquí
-    if (email === user.email && password === user.password) {
-      alert('Inicio de sesión exitoso');
-      setEmail("");
-      setPassword("")
-    } else {
-      alert('Credenciales incorrectas');
-      setEmail("");
-      setPassword("")
-    }
+  signInUser(email, password)
   };
 
   return (
