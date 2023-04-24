@@ -18,7 +18,7 @@ const LoginForm = () => {
       setPassword("")
     }
   };
-
+ 
   return (
     <View className="flex  w-9/12 h-36 items-center">
         <Text className="text-xl text-white m-2">Bienvenidos</Text>
