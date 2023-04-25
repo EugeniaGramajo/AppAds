@@ -4,7 +4,8 @@ import LoginForm from '../LogingForm/LoginForm';
 import RegisterForm from '../LogingForm/RegisterForm';
 import RecoveryPasswordForm from '../LogingForm/RecoveryPasswordForm';
 import { NavigationContainer } from '@react-navigation/native';
-import HomeScreen from "../Home/HomeScreen";
+import HomeScreen from "../../Home/HomeScreen";
+
 
 const Stack = createStackNavigator();
 
