@@ -1,17 +1,16 @@
 import React from "react";
-import { View } from "react-native";
 import Navigation from "./components/User/Navigation/Navigation";
 import firebase from '@react-native-firebase/app';
-import { API_KEY, PROJECT_ID, DATABASE_URL, STORAGE_BUCKET, MESSAGING_SENDER_ID, APP_ID } from '@env';
+import Config from 'react-native-config';
 
 const firebaseConfig = {
-  apiKey: API_KEY,
-  authDomain: `${PROJECT_ID}.firebaseapp.com`,
-  databaseURL: DATABASE_URL,
-  projectId: PROJECT_ID,
-  storageBucket: STORAGE_BUCKET,
-  messagingSenderId: MESSAGING_SENDER_ID,
-  appId: APP_ID,
+  apiKey: Config.API_KEY,
+  authDomain: `${Config.PROJECT_ID}.firebaseapp.com`,
+  databaseURL: Config.DATABASE_URL,
+  projectId: Config.PROJECT_ID,
+  storageBucket: Config.STORAGE_BUCKET,
+  messagingSenderId: Config.MESSAGING_SENDER_ID,
+  appId: Config.APP_ID,
 };
 
 if (!firebase.apps.length) {
