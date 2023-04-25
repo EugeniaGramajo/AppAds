@@ -1,17 +1,17 @@
 import React from "react";
-import { Pressable, Text, TextInput, View } from "react-native";
+import { Pressable, Text, TextInput, View ,Button} from "react-native";
 
 
 export default function RegisterForm() {
+    const stylesInput=className="text-white items-center bg-textBlue w-9/12 h-14 rounded-md p-2 m-1"
     return (
-        <View className="flex  w-9/12 h-60 items-center">
+        <View className="flex justify-center items-center bg-darkBlue h-full">  
             <Text className="text-white text-xl">Welcome</Text>
-            <TextInput className="text-white items-center bg-white w-8/12 h-1/6 rounded-md p-2 m-1" placeholder="Name" value=""/>
-            <TextInput className="text-white items-center bg-white w-8/12 h-1/6 rounded-md p-2 m-1" placeholder="Email" value="" />
-            <TextInput className="text-white items-center bg-white w-8/12 h-1/6 rounded-md p-2 m-1" placeholder="Repeat Email" value="" />
-            <TextInput className="text-white items-center bg-white w-8/12 h-1/6 rounded-md p-2 m-1" placeholder="Password" value="" secureTextEntry/>
-            <TextInput className="text-white items-center bg-white w-8/12 h-1/6 rounded-md p-2 m-1" placeholder="Repeat Password" value="" secureTextEntry/>
-            <Pressable className="bg-buttonBlue h-1/6 w-1/2 items-center rounded-md m-1 shadow-2xl shadow-buttonBlue">
+            <TextInput className={stylesInput} placeholder="Email" value="" />
+            <TextInput className={stylesInput} placeholder="Repeat Email" value="" />
+            <TextInput className={stylesInput} placeholder="Password" value="" secureTextEntry/>
+            <TextInput className={stylesInput} placeholder="Repeat Password" value="" secureTextEntry/>
+            <Pressable className="bg-buttonBlue h-14 w-1/3 items-center rounded-md m-1 shadow-2xl shadow-buttonBlue">
                 <Text className="flex justify-center items-center m-auto">Register</Text>
             </Pressable>
         </View>
