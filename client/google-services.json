@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "247091753098",
+    "project_id": "appads-85fa9",
+    "storage_bucket": "appads-85fa9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247091753098:android:15141c9ed007660eaebd73",
+        "android_client_info": {
+          "package_name": "com.lugra.appAds"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "247091753098-io179j9afdoi49sjrlstr44lkv7olr3g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoorAQ2nTyqM-XvhFIqRiYAE-4wSGK6S0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "247091753098-fq7mhfr6262q22ga8lihheaa8m7d0nit.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

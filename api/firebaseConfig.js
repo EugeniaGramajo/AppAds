@@ -15,5 +15,11 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+database.ref('users').push({
+  name: 'John Doe',
+  age: 30,
+  email: 'john.doe@example.com'
+});
 
 export default firebase;
