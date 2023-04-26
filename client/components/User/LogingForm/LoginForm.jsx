@@ -1,25 +1,26 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet , Text,Pressable} from 'react-native';
-import { user } from '../../../Data/Data';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import {initializeApp} from 'firebase/app';
+import {firebaseConfig} from '../../../firebase-config'
 
 const LoginForm = ({navigation}) => {
   const [email, setEmail, ] = useState('');
   const [password, setPassword] = useState('');
+const app = initializeApp(firebaseConfig);
+const auth=getAuth(app);
 
   const handleLogin = () => {
-    if (email === user.email && password === user.password) {
-      alert('Inicio de sesión exitoso');
-      setEmail("");
-      setPassword("")
-      //--------------------------------
-      //asi se direciona hacia la ruta especifica
-      navigation.navigate('HomeScreen')
-      //---------------------------------
-    } else {
-      alert('Credenciales incorrectas');
-      setEmail("");
-      setPassword("")
-    }
+     signInWithEmailAndPassword(auth,email,password)
+    .then((userCredential)=>{
+      console.log("Signed in!!")
+      const user = userCredential.user;
+      
+    })
+    .catch(error=>{
+      console.log(error)
+    })
+     
   };
   const handleRegister = () => {
     navigation.navigate('RegisterForm');
