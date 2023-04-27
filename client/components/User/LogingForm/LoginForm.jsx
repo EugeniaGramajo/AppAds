@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet , Text,Pressable} from 'react-native';
+import { View, TextInput, Button, StyleSheet , Text,Pressable, Image} from 'react-native';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import {initializeApp} from 'firebase/app';
-import {firebaseConfig} from '../../../firebase-config'
+import {firebaseConfig} from '../../../firebase-config';
+import googleIcon from '../../../assets/google-icon.png'
 
 const LoginForm = ({navigation}) => {
   const [email, setEmail, ] = useState('');
@@ -47,14 +48,19 @@ const auth=getAuth(app);
         value={password}
         secureTextEntry
       />
-      <Pressable className="bg-cyan-300 h-14 w-1/2 items-center rounded-md m-2 shadow-2xl shadow-buttonBlue" onPress={handleLogin}>
-        <Text className="flex justify-center items-center m-auto">Sign In</Text>
-        
+      <View className="h-11 w-9/12 items-center flex flex-row justify-center m-2">
+      <Pressable className="bg-red-600 h-11 w-1/2 items-center rounded-md m-2 shadow-2xl shadow-buttonBlue" onPress={handleLogin}>
+        <Text className="flex justify-center items-center m-auto font-medium">Sign In</Text>
       </Pressable>
-      <Pressable className="bg-cyan-500 h-14 w-1/2 items-center rounded-md m-1 shadow-2xl shadow-buttonBlue" onPress={handleRegister}>
-        <Text className="flex justify-center items-center m-auto">Register</Text>
+      <Pressable className="bg-white h-11 w-1/2 items-center rounded-md shadow-2xl shadow-buttonBlue flex-row m-1 p-1" onPress="">
+        <Image source={googleIcon} className="w-5 h-5 m-auto"/>
+        <Text className="flex justify-center items-center m-auto font-bold"> Sign in with Google</Text>
       </Pressable>
-      <Text className="text-white underline" onPress={handleForgotPassword}>forgot your password?</Text>
+      </View>
+      <Pressable className="bg-green-600 h-11 w-1/2 items-center rounded-md m-1 shadow-2xl shadow-buttonBlue" onPress={handleRegister}>
+        <Text className="flex justify-center items-center m-auto font-medium">Register</Text>
+      </Pressable>
+      <Text className="text-white underline font-medium" onPress={handleForgotPassword}>Forgot your password?</Text>
     </View>
   );
 };

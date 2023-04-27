@@ -28,8 +28,8 @@ export default function RegisterForm() {
             <TextInput className={stylesInput} placeholder="Repeat Email" value={email} onChangeText={setEmail}/>
             <TextInput className={stylesInput} placeholder="Password" value={password} onChangeText={setPassword} secureTextEntry/>
             <TextInput className={stylesInput} placeholder="Repeat Password" value={password} onChangeText={setPassword} secureTextEntry/>
-            <Pressable className="bg-buttonBlue h-14 w-1/3 items-center rounded-md m-1 shadow-2xl shadow-buttonBlue">
-                <Text onPress={handleRegister} className="flex justify-center items-center m-auto">Register</Text>
+            <Pressable className="bg-green-600 h-11 w-1/2 items-center rounded-md m-1 shadow-2xl shadow-buttonBlue">
+                <Text onPress={handleRegister} className="flex justify-center items-center m-auto font-bold">Register</Text>
             </Pressable>
         </View>
     )
