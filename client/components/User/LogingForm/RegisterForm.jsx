@@ -6,6 +6,7 @@ export default function RegisterForm() {
     const [email, setEmail, ] = useState('');
     const [password, setPassword] = useState('');
     const auth = getAuth();
+    
     const handleRegister = () => {
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
