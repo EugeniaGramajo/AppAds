@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet , Text,Pressable, Image} from 'react-native';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import {initializeApp} from 'firebase/app';
-import {firebaseConfig} from '../../../firebase-config';
 import googleIcon from '../../../assets/google-icon.png'
+import app from '../../../firebase-config.js'
 
 const LoginForm = ({navigation}) => {
   const [email, setEmail, ] = useState('');
   const [password, setPassword] = useState('');
-const app = initializeApp(firebaseConfig);
+
 const auth=getAuth(app);
 
   const handleLogin = () => {
@@ -19,7 +18,8 @@ const auth=getAuth(app);
       
     })
     .catch(error=>{
-      console.log(error)
+      console.log(error,"hola soy el catch login")
+
     })
      
   };
