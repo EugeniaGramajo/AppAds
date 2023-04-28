@@ -1,7 +1,11 @@
 import React from "react";
-import { Image, Text, View } from "react-native";
+import { Image, Text, View, Pressable} from "react-native";
 import webBanner from '../../assets/web-banner.jpg'
-export default function HomeScreen(){
+export default function HomeScreen({navigation}){
+
+    const handleLogOut=()=>{
+        navigation.navigate('LoginForm')
+    }
     return(
     <>
     <View className="flex items-center h-5/6 mt-10 ">
@@ -9,6 +13,9 @@ export default function HomeScreen(){
         <Image source={webBanner} className="h-auto w-full"></Image>
         <View className="flex-row w-9/12 h-10 mt-10 absolute">
         <Text className=" flex text-right top-20 p-2 text-white">Bienvenido Guest03949</Text>
+        <Pressable className="bg-white flex justify-center items-center m-auto rounded-full w-10 h-10" onPress={handleLogOut}>
+           <Text className="flex ">Log Out</Text> 
+        </Pressable>
         
         </View>
         <Text className=" m-auto justify-center p-2 text-center">$=xxx</Text>

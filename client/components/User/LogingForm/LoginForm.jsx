@@ -15,7 +15,9 @@ const auth=getAuth(app);
     .then((userCredential)=>{
       console.log("Signed in!!")
       const user = userCredential.user;
-      
+      setEmail("")
+      setPassword("")
+      navigation.reset({index:0,routes:[{name:'HomeScreen'}]})
     })
     .catch(error=>{
       console.log(error,"hola soy el catch login")
